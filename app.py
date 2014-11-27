@@ -3,6 +3,7 @@ import os
 import sys
 
 from flask import Flask, render_template
+from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
 
@@ -29,6 +30,9 @@ def index():
 def glitch(path):
     return render_template('glitch.html', keywords=path,
                            track=random.choice(get_tracks()))
+
+app.wsgi_app = ProxyFix(app.wsgi_app)
+
 
 if __name__ == '__main__':
     app.debug = sys.platform == "darwin"
