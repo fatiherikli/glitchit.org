@@ -2,7 +2,7 @@ window.glitchit = window.glitchit || {};
 
 glitchit.Application = $.Class.extend({
 
-    GLITCH_PER_MS: 300,
+    GLITCH_PER_MS: 100,
 
     workspaceSelector: null,
 
