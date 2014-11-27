@@ -25,7 +25,7 @@
 
         onStateChange: function (event) {
             if (event.data === YT.PlayerState.ENDED){
-                this.loadVideo();
+                this.player.playVideo();
             }
         },
 
