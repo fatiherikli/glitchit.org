@@ -23,7 +23,11 @@
             event.target.playVideo();
         },
 
-        onStateChange: function () {},
+        onStateChange: function (event) {
+            if (event.data === YT.PlayerState.ENDED){
+                this.loadVideo();
+            }
+        },
 
         loadPlayer: function () {
             return new YT.Player('player', {
