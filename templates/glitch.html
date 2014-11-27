@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="canvas"></div>
+<div id="player"></div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript">
+    new glitchit.Application({
+        keyword: "{{ keywords }}",
+        workspaceSelector: "#canvas",
+        glitcher: new glitchit.Base64ImageGlitcher(),
+        filters: [
+            new glitchit.GrayscaleFilter(),
+            new glitchit.TVFilter(),
+            new glitchit.BrightnessFilter()
+        ]
+    }).render();
+</script>
+<script>
+    onYouTubeIframeAPIReady = function () {
+        var player = new glitcit.MusicPlayer({
+            youtubeVideoId: "vC6QyR6cwrc"
+        });
+        player.render();
+    }
+</script>
+{% endblock %}
