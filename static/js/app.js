@@ -92,14 +92,19 @@ glitchit.Application = $.Class.extend({
     },
 
     render: function () {
+        var loop = null;
         this.findImage(function (imageUrl) {
                 this.loadImage(imageUrl, function (data) {
-                    setInterval(function () {
+                    loop = setInterval(function () {
                         this.glitch(data, []);
                     }.bind(this), this.GLITCH_PER_MS)
                 }.bind(this));
             }.bind(this), function () {
         });
+        setTimeout(function () {
+            clearInterval(loop);
+            this.render();
+        }.bind(this), 5000);
     },
 
     findImage: function (success, error) {
