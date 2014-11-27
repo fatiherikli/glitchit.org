@@ -22,7 +22,9 @@
 <script>
     onYouTubeIframeAPIReady = function () {
         var player = new glitcit.MusicPlayer({
-            youtubeVideoId: "vC6QyR6cwrc"
+            youtubeVideoId: "{{ track.id }}",
+            title: "{{ track.title }}",
+            band: "{{ track.band }}"
         });
         player.render();
     }
