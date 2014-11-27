@@ -82,3 +82,14 @@ header a {
     color: gray;
     text-align: right;
 }
+
+#track-info {
+    position: absolute;
+    left: 100px;
+    bottom: 60px;
+}
+
+
+h2, h3 {
+    font-weight: normal;
+}

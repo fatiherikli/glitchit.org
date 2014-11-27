@@ -13,8 +13,6 @@
         loadVideo: function (response) {
             this.player.loadVideoById(response.youtube_id);
             this.player.playVideo();
-            //$(this.bandSelector).html(response.band);
-            //$(this.trackTitleSelector).html(response.title);
         },
 
         render: function () {

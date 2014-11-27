@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id="track-info">
+    <h3>{{ track.title }}</h3>
+    <h3>{{ track.band }}</h3>
+</div>
 <div id="canvas"></div>
 <div id="player"></div>
 {% endblock %}
@@ -18,13 +22,17 @@
             new glitchit.BrightnessFilter()
         ]
     }).render();
+
+    setTimeout(function () {
+        $("#track-info").animate({
+            "left": -999
+        });
+    }, 3000);
 </script>
 <script>
     onYouTubeIframeAPIReady = function () {
         var player = new glitcit.MusicPlayer({
-            youtubeVideoId: "{{ track.id }}",
-            title: "{{ track.title }}",
-            band: "{{ track.band }}"
+            youtubeVideoId: "{{ track.id }}"
         });
         player.render();
     }
