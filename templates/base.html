@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
+    <!--
+
+    glitch art şerefsizliktir
+
+    -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{% block title %}glitch it{% endblock %}</title>
@@ -9,13 +14,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/screen.css') }}">
 </head>
 <body>
-<!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser.
-    Please <a href="http://browsehappy.com/">upgrade your browser</a> or
-    <a href="http://www.google.com/chromeframe/?redirect=true">activate Google
-        Chrome Frame</a>
-    to improve your experience.</p>
-<![endif]-->
 {% block content %}{% endblock %}
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/vendor/jquery.min.js') }}"></script>
@@ -29,5 +27,15 @@
 <script src="{{ url_for('static', filename='js/player.js') }}"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 {% endblock %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57153189-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 </body>
 </html>
