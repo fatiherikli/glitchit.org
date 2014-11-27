@@ -28,15 +28,15 @@ glitchit.Base64ImageGlitcher = $.Class.extend({
             prefix = parts[0] + indicator;
             
         for (var i=0; i < data.length; i++) {
-            if (i>(data.length/20) && i < (data.length/3)) {
-                data[i] = data[i+50]
+            if (i>(data.length/10) && i < (data.length/3)) {
+                data[i] = data[i+30]
             }
             
         }
 
         var glitched = prefix + this.to_base64(data);
 
-        if (iteration < (Math.random() * 10)) {
+        if (iteration < (Math.random() * 20)) {
             return this.glitch(glitched, iteration + 1)
         }
         
