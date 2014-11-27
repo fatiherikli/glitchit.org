@@ -2,6 +2,8 @@ window.glitchit = window.glitchit || {};
 
 glitchit.Application = $.Class.extend({
 
+    GLITCH_PER_MS: 300,
+
     workspaceSelector: null,
 
     glitcher: null,
@@ -92,7 +94,9 @@ glitchit.Application = $.Class.extend({
     render: function () {
         this.findImage(function (imageUrl) {
                 this.loadImage(imageUrl, function (data) {
-                    setInterval(function () {this.glitch(data, []);}.bind(this), 100)
+                    setInterval(function () {
+                        this.glitch(data, []);
+                    }.bind(this), this.GLITCH_PER_MS)
                 }.bind(this));
             }.bind(this), function () {
         });
@@ -103,7 +107,8 @@ glitchit.Application = $.Class.extend({
         $.getJSON(url, {
             tags: this.keyword
         }, function (response) {
-            var image = response.items[0].media.m;
+            var randomIndex = Math.floor(Math.random() * response.items.length),
+                image = response.items[randomIndex].media.m;
             success(image);
         });
     }
