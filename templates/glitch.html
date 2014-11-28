@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div id="amblem">
+    <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt=""/></a>
+</div>
 <div id="track-info">
     <h3>{{ track.title }}</h3>
     <h3>{{ track.band }}</h3>
