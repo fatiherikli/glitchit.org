@@ -26,10 +26,12 @@ glitchit.Base64ImageGlitcher = $.Class.extend({
             parts = imageData.split(indicator),
             data = this.to_buffer(parts[1]),
             prefix = parts[0] + indicator;
-            
+            //console.log(data.length)
+            // 18300 bad
+
         for (var i=0; i < data.length; i++) {
-            if (i>(data.length/10) && i < (data.length/3)) {
-                data[i] = data[i+30]
+            if (i>(1000) && i < (data.length/4)) {
+                data[i] = data[i+50]
             }
             
         }
