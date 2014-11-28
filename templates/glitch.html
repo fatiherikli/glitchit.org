@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}glitch it: {{ keywords }}{% endblock %}
+{% block title %}glitch it: {{ keywords|replace("+", " ") }}{% endblock %}
 
 {% block content %}
 <div id="amblem">
